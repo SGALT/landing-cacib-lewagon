@@ -1,0 +1,22 @@
+.footer {
+  background-color: #372173;
+  padding: 96px 0 48px 0;
+}
+
+.footer ul>li {
+  display: inline;
+  margin: 0 4px;
+}
+
+.footer ul {
+  padding: 0;
+}
+
+.footer p {
+  color: white;
+}
+
+.footer a {
+  color: white;
+  font-size: 24px;
+}

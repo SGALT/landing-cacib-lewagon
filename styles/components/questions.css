@@ -1,0 +1,12 @@
+.hidden-question {
+  opacity: 0;
+  transform: translateX(-40px);
+  /* Slide initial */
+  transition: opacity 1s, transform 1s;
+  /* Durée de l'animation */
+}
+
+.visible-question {
+  opacity: 1;
+  transform: translateX(0);
+}

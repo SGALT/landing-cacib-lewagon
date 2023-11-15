@@ -1,0 +1,17 @@
+.banner {
+  height: 45vh;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(220, 220, 220, 0.5)), url("../../images/banner-program.webp");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.banner img {
+  height: 25px;
+}
