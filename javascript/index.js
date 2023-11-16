@@ -11,7 +11,7 @@ surveyRaz.addEventListener("click", (event) => {
 // calculate score and display the result
 const endSurvey = (score) => {
   console.log(score);
-  scoreArray = {
+  const scoreArray = {
     1: "Débutant. Recommandé : Python Level 1",
     2: "Débutant. Recommandé : Python Level 1",
     3: "Débutant intermédiaire. Recommandé : Python Level 1",
@@ -19,7 +19,19 @@ const endSurvey = (score) => {
     5: "Intermédiaire avancé. Recommandé : Python Level 3",
     6: "Aucune formation supplémentaire n'est nécessaire à ce stade"
   };
-  finalMessage.lastElementChild.innerText = scoreArray[score];
+  const scoreArrayEn = {
+    1: "Beginner. Recommended: Python Level 1",
+    2: "Beginner. Recommended: Python Level 1",
+    3: "Moderate Beginner. Recommended: Python Level 1",
+    4: "Intermediate. Recommended: Python Level 2",
+    5: "Advanced Intermediate. Recommended: Python Level 3",
+    6: "No further training is necessary at this stage"
+  };
+  if (finalMessage.dataset.language === "fr") {
+    finalMessage.lastElementChild.innerText = scoreArray[score];
+  } else {
+    finalMessage.lastElementChild.innerText = scoreArrayEn[score];
+  }
   document.querySelectorAll('.question').forEach((question) => {
     question.classList.add('d-none');
   })
