@@ -1,17 +1,59 @@
 .banner {
   height: 45vh;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(220, 220, 220, 0.5)), url("../../images/banner-program.webp");
-  background-size: cover;
-  background-position: center;
   text-align: center;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   padding: 24px 0;
+  overflow-x: hidden;
 }
 
-.banner img {
+.logos {
   height: 25px;
+}
+
+.banner-photos-left {
+  display: none;
+}
+
+.banner-photos-right {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .banner-photos-left {
+    display: block;
+    height: 150px;
+    margin-left: -30px;
+  }
+
+  .banner-photos-right {
+    display: block;
+    height: 150px;
+    margin-right: -30px;
+  }
+}
+@media (min-width: 992px) {
+  .banner-photos-left {
+    display: block;
+    height: 200px;
+    margin: 0;
+  }
+
+  .banner-photos-right {
+    display: block;
+    height: 200px;
+    margin: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .banner-photos-left {
+    display: block;
+    height: 220px;
+  }
+  .banner-photos-right {
+    display: block;
+    height: 220px;
+  }
 }
