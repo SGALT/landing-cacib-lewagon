@@ -1,6 +1,7 @@
 .banner {
-  height: 45vh;
+  height: 45%;
   text-align: center;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
