@@ -10,33 +10,41 @@ surveyRaz.addEventListener("click", (event) => {
 })
 // calculate score and display the result
 const endSurvey = (score) => {
-  console.log(score);
   const scoreArray = {
-    1: "Débutant. Recommandé : Python Level 1",
-    2: "Débutant. Recommandé : Python Level 1",
-    3: "Débutant intermédiaire. Recommandé : Python Level 1",
-    4: "Intermédiaire. Recommandé : Python Level 2",
-    5: "Intermédiaire avancé. Recommandé : Python Level 3",
-    6: "Aucune formation supplémentaire n'est nécessaire à ce stade"
+    1: "<h2>Résultat du quizz: Débutant</h2><h3>Recommandé : Python Level 1</h3><a href='#level-1' id='detailslink' class='btn btn-wagon'>Détails</a>",
+    2: "<h2>Résultat du quizz: Débutant</h2><h3>Recommandé : Python Level 1</h3><a href='#level-1' id='detailslink' class='btn btn-wagon'>Détails</a>",
+    3: "<h2>Résultat du quizz: Débutant intermédiaire</h2><h3>Recommandé : Python Level 1</h3><a href='#level-1' id='detailslink' class='btn btn-wagon'>Détails</a>",
+    4: "<h2>Résultat du quizz : Intermédiaire</h2><h3>Recommandé : Python Level 2</h3><a href='#level-2' id='detailslink' class='btn btn-wagon'>Détails</a>",
+    5: "<h2>Résultat du quizz : Intermédiaire avancé</h2><h3>Recommandé : Python Level 3</h3><a href='#level-3' id='detailslink' class='btn btn-wagon'>Détails</a>",
+    6: "<h2>Aucune formation supplémentaire n'est nécessaire à ce stade</h2>"
   };
   const scoreArrayEn = {
-    1: "Beginner. Recommended: Python Level 1",
-    2: "Beginner. Recommended: Python Level 1",
-    3: "Moderate Beginner. Recommended: Python Level 1",
-    4: "Intermediate. Recommended: Python Level 2",
-    5: "Advanced Intermediate. Recommended: Python Level 3",
-    6: "No further training is necessary at this stage"
+    1: "<h2> Result of the quizz: Beginner</h2><h3>Recommended: Python Level 1</h3><a href='#level-1' id='detailslink' class='btn btn-wagon'>Details</a>",
+    2: "<h2> Result of the quizz: Beginner</h2><h3>Recommended: Python Level 1</h3><a href='#level-1' id='detailslink' class='btn btn-wagon'>Details</a>",
+    3: "<h2> Result of the quizz: Moderate Beginner</h2><h3>Recommended: Python Level 1</h3><a href='#level-1' id='detailslink' class='btn btn-wagon'>Details</a>",
+    4: "<h2> Result of the quizz: Intermediate</h2><h3>Recommended: Python Level 2</h3><a href='#level-2' id='detailslink' class='btn btn-wagon'>Details</a>",
+    5: "<h2> Result of the quizz: Advanced Intermediate</h2><h3>Recommended: Python Level 3</h3><a href='#level-3' id='detailslink' class='btn btn-wagon'>Details</a>",
+    6: "<h2>No further training is necessary at this stage</h2>"
   };
   if (finalMessage.dataset.language === "fr") {
-    finalMessage.lastElementChild.innerText = scoreArray[score];
+    finalMessage.lastElementChild.innerHTML = scoreArray[score];
   } else {
-    finalMessage.lastElementChild.innerText = scoreArrayEn[score];
+    finalMessage.lastElementChild.innerHTML = scoreArrayEn[score];
   }
   document.querySelectorAll('.question').forEach((question) => {
     question.classList.add('d-none');
   })
   finalMessage.classList.remove("d-none");
   setTimeout(() => finalMessage.classList.add('visible-question'), 10);
+  document.getElementById('detailslink').addEventListener('click', (event) => {
+    event.preventDefault();
+    const modal = document.getElementById("exampleModal");
+    const bsModal = bootstrap.Modal.getInstance(modal);
+    bsModal.hide();
+    setTimeout(() => {
+      location.href = document.getElementById('detailslink').href
+    }, 500);
+  })
 }
 
 
@@ -88,3 +96,6 @@ answerButtons.forEach((button) => {
     }
   })
 })
+
+
+
